@@ -1,1 +1,230 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="THE CRICKET MAFIA — Premium & Free Cricket Tips. Daily verified picks, high accuracy predictions, VIP access. Join our Telegram now!" />
+  <title>THE CRICKET MAFIA — Free & VIP Cricket Tips</title>
+
+  <meta property="og:title" content="THE CRICKET MAFIA — Free Cricket Tips" />
+  <meta property="og:description" content="Smart picks • Daily wins • Trusted analysis. Join our Telegram for instant predictions." />
+  <meta property="og:type" content="website" />
+
+  <style>
+    :root{
+      --bg:#06070a;
+      --card:#0f1720;
+      --muted:#9aa4b2;
+      --accent:#ffd166; /* warm gold */
+      --glass: rgba(255,255,255,0.03);
+      --radius:18px;
+      --container-padding:24px;
+      --max-width:980px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(22,27,34,0.6) 0%, transparent 40%), linear-gradient(180deg,#020305 0%, #081018 60%);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      display:flex;align-items:center;justify-content:center;padding:36px;
+      font-size:16px;
+    }
+
+    .wrap{width:100%;max-width:var(--max-width);padding:var(--container-padding)}
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 20px 40px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.03);
+      display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;
+    }
+
+    .logo{
+      min-width:120px;min-height:120px;width:120px;height:120px;border-radius:999px;display:flex;align-items:center;justify-content:center;background:var(--glass);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.04);
+      box-shadow:0 6px 20px rgba(0,0,0,0.6), 0 0 18px rgba(0,0,0,0.4) inset;
+    }
+    .logo img{width:82px;height:82px;object-fit:cover;border-radius:999px}
+
+    .main{
+      flex:1;min-width:220px;
+    }
+
+    h1{
+      margin:0;color:#fff;font-size:28px;letter-spacing:1px;text-shadow:0 6px 18px rgba(0,0,0,0.6);
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap
+    }
+    .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
+
+    .pill{display:inline-block;background:rgba(255,255,255,0.06);padding:6px 12px;border-radius:999px;font-weight:600;font-size:13px;color:var(--accent);border:1px solid rgba(255,209,102,0.08)}
+
+    .features{display:grid;grid-template-columns:repeat(1, minmax(0,1fr));gap:10px;margin-top:18px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .tick{width:28px;height:28px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);border:1px solid rgba(255,255,255,0.03)}
+    .ftext{color:var(--muted);font-size:15px}
+
+    .cta-row{margin-top:22px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;border-radius:12px;padding:14px 20px;font-weight:700;background:linear-gradient(90deg,var(--accent), #ffb84d);color:#07202a;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(255,177,56,0.12), 0 2px 0 rgba(255,255,255,0.02) inset;transition:transform .15s ease, box-shadow .15s ease;text-decoration:none
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:12px 16px;border-radius:12px}
+
+    .stats{display:flex;gap:18px;margin-top:16px;flex-wrap:wrap}
+    .stat{background:rgba(255,255,255,0.02);padding:10px 14px;border-radius:12px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,0.02)}
+
+    /* testimonials / info */
+    .right{width:320px;min-width:260px}
+    .box{background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .tiny{font-size:13px;color:var(--muted)}
+
+    footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* responsive */
+    @media (max-width:880px){
+      .card{flex-direction:column;align-items:center}
+      .right{width:100%;min-width:unset}
+      .logo{width:96px;height:96px}
+      h1{font-size:22px}
+    }
+
+    /* subtle animated glow */
+    .glow{position:relative}
+    .glow:after{content:"";position:absolute;inset:-8px;border-radius:inherit;background:radial-gradient(closest-side, rgba(255,209,102,0.08), transparent 50%);filter:blur(18px);opacity:0.9;pointer-events:none}
+
+    /* sticky CTA for mobile */
+    .sticky-cta{display:none}
+    @media (max-width:520px){
+      .sticky-cta{display:flex;position:fixed;left:12px;right:12px;bottom:18px;gap:10px;z-index:50;justify-content:center}
+    }
+
+    /* small helpers */
+    .caps{letter-spacing:1px;text-transform:uppercase;font-size:12px;color:var(--muted)}
+    .small{font-size:13px;color:var(--muted)}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="logo glow" aria-hidden="true">
+        <img src="50d49a403fb1265d19b5019fc222bec2.jpg" alt="The Cricket Mafia" />
+      </div>
+
+      <div class="main">
+        <span class="pill">100% Free Cricket tips</span>
+        <h1>THE CRICKET MAFIA <span style="font-size:20px;opacity:0.95;">🎯</span></h1>
+        <div class="subtitle">Smart Picks • Daily Wins • Trusted Analysis</div>
+
+        <div class="features" style="margin-top:16px">
+          <div class="feature"><div class="tick">✓</div><div class="ftext">Expert cricket match predictions with clear reasoning.</div></div>
+          <div class="feature"><div class="tick">★</div><div class="ftext">High winning accuracy — verified daily (VIP + free signals).</div></div>
+          <div class="feature"><div class="tick">🔒</div><div class="ftext">No spam • Instant delivery • Session & Toss tips included.</div></div>
+        </div>
+
+        <div class="cta-row">
+          <a id="joinBtn" class="btn" href="https://t.me/+FijRxXeG01JkNjFl" target="_blank" rel="noopener noreferrer">Join THE CRICKET MAFIA on Telegram</a>
+          <a class="btn-ghost" href="#why" onclick="document.getElementById('why').scrollIntoView({behavior:'smooth'})">Why trust us?</a>
+        </div>
+
+        <div class="stats">
+          <div class="stat">55K+ subscribers</div>
+          <div class="stat">90%+ accuracy</div>
+          <div class="stat">Free + VIP</div>
+        </div>
+
+        <div style="margin-top:14px" class="small">📌 Tip: After joining, enable notifications in Telegram to never miss a verified entry.</div>
+
+        <footer>
+          <div class="tiny">Daily Cricket insights • Verified picks • No spam</div>
+        </footer>
+      </div>
+
+      <aside class="right">
+        <div class="box">
+          <div class="caps">Trusted Analysis</div>
+          <div style="margin-top:8px;font-weight:700;font-size:16px">We analyze line-ups, pitch, toss & matchups.</div>
+          <div class="tiny" style="margin-top:10px">Our process: data-backed analysis + experienced tipper review. Each pick is logged and followed-up with in-play guidance.</div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+            <div style="background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-weight:700">Toss Wins</div>
+            <div style="background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-weight:700">Session Tips</div>
+            <div style="background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:8px;font-weight:700">Early Entries</div>
+          </div>
+
+          <div style="margin-top:14px">
+            <div style="font-weight:800;color:var(--accent)">Recent result</div>
+            <div class="tiny" style="margin-top:8px">SRI LANKA vs PAKISTAN — Match Winner — PASS ✅</div>
+          </div>
+        </div>
+
+        <div style="height:14px"></div>
+        <div class="box small">
+          <div class="caps">VIP Plan</div>
+          <div style="margin-top:8px;font-weight:700">Private channel • Exclusive entries • Higher ROI</div>
+          <div class="tiny" style="margin-top:6px">Want VIP access? Message admin in the Telegram group after joining.</div>
+        </div>
+      </aside>
+    </div>
+
+    <section id="why" style="margin-top:18px">
+      <div class="card" style="padding:18px;flex-direction:column">
+        <h2 style="margin:0 0 6px 0">Why THE CRICKET MAFIA?</h2>
+        <div class="small" style="margin-bottom:12px">We combine statistics, pitch reports and human expertise to deliver concise betting & match prediction signals. Our picks are timestamped and verified.</div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+          <div class="box"><div style="font-weight:700">Verified Picks</div><div class="tiny" style="margin-top:6px">Each signal has origin & proof screenshots where applicable.</div></div>
+          <div class="box"><div style="font-weight:700">Transparent Track</div><div class="tiny" style="margin-top:6px">We publish results and keep historical accuracy publicly visible.</div></div>
+          <div class="box"><div style="font-weight:700">Mobile-first</div><div class="tiny" style="margin-top:6px">Designed to be fast and clear on phones — perfect for Telegram users.</div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <div style="margin-top:18px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
+      <div>© THE CRICKET MAFIA</div>
+      <div class="tiny">Use responsibly. We provide tips for entertainment & sports analysis; not financial advice.</div>
+    </div>
+
+  </div>
+
+  <div class="sticky-cta">
+    <a class="btn" href="https://t.me/+FijRxXeG01JkNjFl" target="_blank" rel="noopener noreferrer" style="width:100%;justify-content:center">Join on Telegram</a>
+  </div>
+
+  <script>
+    (function(){
+      // **टेलीग्राम लिंक यहाँ अपडेट किया गया है**
+      var tg = 'https://t.me/+FijRxXeG01JkNjFl';
+      document.getElementById('joinBtn').href = tg;
+
+      // Simple click event (useful for verifying Pixel / GA events)
+      function postEvent(name){
+        try{
+          // If you add FB Pixel or GA, trigger here. Example: fbq('track', name)
+          console.log('event:',name);
+        }catch(e){}
+      }
+      document.getElementById('joinBtn').addEventListener('click', function(){ postEvent('join_click') });
+
+      // Fast page load optimization hint: defer heavy external scripts (not included here).
+
+      // Add tiny A/B friendly param handling: if url has ?utm=vip it'll show a brief message
+      if(location.search.indexOf('utm=vip')!==-1){
+        var el = document.createElement('div');
+        el.style.cssText = 'position:fixed;right:12px;top:12px;background:rgba(0,0,0,0.5);padding:8px 12px;border-radius:10px;border:1px solid rgba(255,209,102,0.06);font-weight:700;color:var(--accent)';
+        el.innerText = 'VIP Offer Applied';
+        document.body.appendChild(el);
+        setTimeout(function(){el.style.opacity='0';el.remove()},4000);
+      }
+    })();
+  </script>
+
+  </body>
+</html>
