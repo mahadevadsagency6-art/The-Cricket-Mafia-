@@ -11,11 +11,10 @@
   <meta property="og:type" content="website" />
 
   <style>
-    /* OPTIMIZED FONT STACK */
     :root{
       --bg:#071129;--card:#0e1a2a;--muted:#9fb0c7;--accent:#ffd166;--glass:rgba(255,255,255,0.04);
       --radius:18px; --maxw:920px;
-      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
@@ -34,21 +33,23 @@
     }
 
     .top{display:flex; align-items:center; gap:20px}
-    /* AVATAR STYLING FOR IMAGE */
+    
+    /* AVATAR STYLING MODIFIED FOR IMAGE */
     .avatar{
       width:96px; 
       height:96px; 
       border-radius:999px; 
-      background-color: #0d162c;
+      background-color: #0d162c; /* Updated background for image */
+      display:flex;align-items:center;justify-content:center; 
       border:4px solid rgba(255,255,255,0.06); 
       box-shadow:0 6px 24px rgba(2,6,23,0.6) inset;
       overflow: hidden;
-      flex-shrink: 0; /* Prevents image from shrinking on small screens */
+      flex-shrink: 0;
     }
     .avatar img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the area nicely */
     }
 
     h1{margin:0; font-size:34px; letter-spacing:1px}
@@ -60,8 +61,8 @@
     .feat{background:rgba(255,255,255,0.02); padding:12px 14px; border-radius:12px; font-size:15px; color:var(--muted); display:flex; gap:10px; align-items:center}
     .feat .tick{width:20px;height:20px;border-radius:6px;background:linear-gradient(180deg,var(--accent),#ffb84d); display:inline-flex;align-items:center;justify-content:center;color:#052028;font-weight:700}
 
-    .cta{display:flex; gap:14px; margin-top:26px; align-items:center; flex-wrap: wrap;} /* Added flex-wrap */
-    .btn-primary{background:linear-gradient(90deg,var(--accent),#ffb84d); color:#081018; padding:14px 20px; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(255,177,73,0.12); white-space: nowrap;}
+    .cta{display:flex; gap:14px; margin-top:26px; align-items:center; flex-wrap: wrap;}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#ffb84d); color:#081018; padding:14px 20px; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 8px 28px rgba(255,177,73,0.12);}
     .btn-secondary{padding:12px 14px; border-radius:12px; background:transparent; border:1px solid rgba(255,255,255,0.04); color:var(--muted); text-decoration:none; font-weight:600}
 
     .stats{display:flex; gap:18px; margin-top:18px; color:var(--muted); font-size:13px}
@@ -72,7 +73,7 @@
 
     footer{margin-top:26px; color:var(--muted); font-size:13px; text-align:center}
 
-    /* mobile responsive updates */
+    /* mobile */
     @media (max-width:720px){
       body{padding:18px}
       .top{flex-direction:row}
@@ -80,14 +81,15 @@
       .features{grid-template-columns:1fr}
       .avatar{width:80px;height:80px}
       /* MOBILE CTA OPTIMIZATION */
-      .cta .btn-primary {
-          width: 100%; /* Primary button takes full width */
+      .cta .btn-primary, .cta .btn-secondary {
+          width: 100%;
           text-align: center;
+      }
+      .cta .btn-primary {
           margin-bottom: 10px;
       }
-      .cta .btn-secondary {
-          width: 100%; /* Secondary button takes full width */
-          text-align: center;
+      .cta {
+          flex-direction: column;
       }
     }
 
@@ -164,7 +166,14 @@ Join ➤ https://t.me/+FijRxXeG01JkNjFl
   </div>
 
   <script>
+    // small interaction: scroll to how section
     document.getElementById('previewBtn').addEventListener('click', function(e){ e.preventDefault(); document.getElementById('how').scrollIntoView({behavior:'smooth'});});
+
+    // mobile deep link support: try to open telegram app on mobile
+    // Note: The direct join link already handles deep linking well on most mobile devices.
+    document.getElementById('joinBtn').addEventListener('click', function(e){
+      // nothing required; link opens in new tab.
+    });
   </script>
 </body>
 </html>
